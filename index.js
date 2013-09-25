@@ -9,7 +9,7 @@
 
   module.exports = {
     getVariables: function(filename, envVar) {
-      var config, env, message;
+      var baseDir, config, env, message;
       if (filename == null) {
         filename = "config";
       }
@@ -21,13 +21,13 @@
         envVar = filename;
         filename = "config";
       }
-      dotPath = __dirname + "/" + dotPath;
-      if (fs.existsSync(dotPath + filename + ".json")) {
+      baseDir = __dirname + "/";
+      if (fs.existsSync(baseDir + dotPath + filename + ".json")) {
         message = "Configurizer, loading " + filename + ".json";
-        config = require(dotPath + filename + ".json");
-      } else if (fs.existsSync(dotPath + filename + ".yaml")) {
+        config = require(baseDir + dotPath + filename + ".json");
+      } else if (fs.existsSync(baseDir + dotPath + filename + ".yaml")) {
         message = "Configurizer, loading " + filename + ".yaml";
-        config = require(dotPath + filename + ".yaml");
+        config = require(baseDir + dotPath + filename + ".yaml");
       }
       if (typeof process.env.NODE_ENV === "undefined") {
         message = message + " -- NO NODE_ENV SET -- ";
