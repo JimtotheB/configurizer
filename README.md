@@ -1,7 +1,8 @@
 #Configurizer
 ####only does one thing, 
 ####...loads a .yaml or .json file in the same directory as /node_modules.
-######not_simple = require("../../../../../some.json")
+######not_configurizer = require("../../../../../some.json")
+######configurizer = require("configurizer").getVariables()
 
 ##Install.
 ```bash
