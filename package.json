@@ -1,6 +1,6 @@
 {
   "name": "configurizer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simply load a config file from your projects root directory",
   "main": "index.js",
   "scripts": {
