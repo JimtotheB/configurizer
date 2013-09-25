@@ -1,0 +1,10 @@
+{
+  "development": {
+    "test": "development",
+    "file": "config.yaml"
+  },
+  "production": {
+    "test": "production",
+    "file": "config.yaml"
+  }
+}

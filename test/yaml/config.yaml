@@ -1,0 +1,7 @@
+---
+  production:
+    test: "production"
+    file: "config.yaml"
+  development:
+    test: "development"
+    file: "config.yaml"
