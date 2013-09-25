@@ -9,7 +9,7 @@ module.exports =
       envVar = filename
       filename = "config"
 
-
+    dotPath = __dirname + "/" + dotPath
     if fs.existsSync(dotPath + filename + ".json")
       message = "Configurizer, loading " + filename + ".json"
       config = require(dotPath + filename + ".json")
