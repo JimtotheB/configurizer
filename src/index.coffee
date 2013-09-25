@@ -11,11 +11,11 @@ module.exports =
 
 
     if fs.existsSync(dotPath + filename + ".json")
-      message = "node-simple-config, loading " + filename + ".json"
+      message = "Configurizer, loading " + filename + ".json"
       config = require(dotPath + filename + ".json")
 
     else if fs.existsSync(dotPath + filename + ".yaml")
-      message = "node-simple-config, loading " + filename + ".yaml"
+      message = "Configurizer, loading " + filename + ".yaml"
       config = require(dotPath + filename + ".yaml")
 
     if typeof (process.env.NODE_ENV) is "undefined"
@@ -29,7 +29,7 @@ module.exports =
         console.log message + " with " + env + " variables."
         config[env]
       else
-        console.log "ERROR! simple-node-config - please make sure that your config file has a property that " + "matches your NODE_ENV environment variable."
+        console.log "ERROR! Configurizer - please make sure that your config file has a property that " + "matches your NODE_ENV environment variable."
     else
       console.log message + " with all variables."
       config
