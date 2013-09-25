@@ -1,4 +1,4 @@
-#Configurizer
+#Configurizer [![Build Status](https://travis-ci.org/PaperElectron/configurizer.png?branch=master)](https://travis-ci.org/PaperElectron/configurizer)
 ####only does one thing, 
 ####...loads a .yaml or .json file in the same directory as /node_modules.
 ######not_configurizer = require("../../../../../some.json")
