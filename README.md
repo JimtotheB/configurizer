@@ -4,6 +4,8 @@
 ######not_configurizer = require("../../../../../some.json")
 ######configurizer = require("configurizer").getVariables()
 
+##Always think carefully before checking config files into git.
+
 ##Install.
 ```bash
 $ npm install configurizer --save
