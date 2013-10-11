@@ -16,7 +16,6 @@
       if (envVar == null) {
         envVar = true;
       }
-      message = "";
       if (arguments.length === 1 && typeof filename === "boolean") {
         envVar = filename;
         filename = "config";
@@ -31,19 +30,16 @@
       }
       if (typeof process.env.NODE_ENV === "undefined") {
         message = message + " -- NO NODE_ENV SET -- ";
-        console.log(message);
         return config;
       }
       if (envVar) {
         env = process.env.NODE_ENV;
         if (config.hasOwnProperty(env)) {
-          console.log(message + " with " + env + " variables.");
           return config[env];
         } else {
           return console.log("ERROR! Configurizer - please make sure that your config file has a property that " + "matches your NODE_ENV environment variable.");
         }
       } else {
-        console.log(message + " with all variables.");
         return config;
       }
     },
