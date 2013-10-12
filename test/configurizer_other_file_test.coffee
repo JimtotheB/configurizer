@@ -12,6 +12,7 @@ describe "Module should load up other config files", ->
       config.should.exist
 
     it "Should have property --test-- ", ->
+      console.log config
       config.should.have.property "a"
 
     it "With a value of --development--", ->
