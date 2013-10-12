@@ -1,5 +1,5 @@
 (function() {
-  var dotPath, fs;
+  var config, dotPath, fs;
 
   fs = require("fs");
 
@@ -7,14 +7,19 @@
 
   dotPath = "../../";
 
+  config = null;
+
   module.exports = {
     getVariables: function(filename, envVar) {
-      var baseDir, config, env, message;
+      var baseDir, env, message;
       if (filename == null) {
         filename = "config";
       }
       if (envVar == null) {
         envVar = true;
+      }
+      if (config != null) {
+        return config;
       }
       if (arguments.length === 1 && typeof filename === "boolean") {
         envVar = filename;

@@ -1,9 +1,12 @@
 fs = require("fs")
 require "require-yaml"
 dotPath = "../../"
-
+config = null
 module.exports =
+
   getVariables: (filename="config", envVar=true) ->
+    if config?
+      return config
     if arguments.length is 1 and typeof filename is "boolean"
       envVar = filename
       filename = "config"
