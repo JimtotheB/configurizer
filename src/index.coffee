@@ -6,7 +6,12 @@ module.exports =
 
   getVariables: (filename="config", envVar=true) ->
     if config?
+      if envVar
+        env = process.env.NODE_ENV
+        if config.hasOwnProperty(env)
+          return config[env]
       return config
+
     if arguments.length is 1 and typeof filename is "boolean"
       envVar = filename
       filename = "config"
@@ -21,9 +26,9 @@ module.exports =
       config = require(baseDir + dotPath + filename + ".yaml")
 
     if typeof (process.env.NODE_ENV) is "undefined"
-      message = message + " -- NO NODE_ENV SET -- "
+      message = message + " --- NO NODE_ENV SET --- "
       return config
-
+#//TODOThis broke the plugin nitwit fix it.
     if envVar
       env = process.env.NODE_ENV
       if config.hasOwnProperty(env)

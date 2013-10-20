@@ -19,6 +19,12 @@
         envVar = true;
       }
       if (config != null) {
+        if (envVar) {
+          env = process.env.NODE_ENV;
+          if (config.hasOwnProperty(env)) {
+            return config[env];
+          }
+        }
         return config;
       }
       if (arguments.length === 1 && typeof filename === "boolean") {
@@ -34,7 +40,7 @@
         config = require(baseDir + dotPath + filename + ".yaml");
       }
       if (typeof process.env.NODE_ENV === "undefined") {
-        message = message + " -- NO NODE_ENV SET -- ";
+        message = message + " --- NO NODE_ENV SET --- ";
         return config;
       }
       if (envVar) {
